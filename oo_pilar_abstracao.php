@@ -4,9 +4,31 @@
     class Funcionario {
 
         //atributos
-        public $nome = "José";
-        public $telefone = "11 99999-9999";
-        public $numFilhos = 2;
+        public $nome = null;
+        public $telefone = null;
+        public $numFilhos = null;
+
+        //getters e setters
+        function setNome($nome) {
+            $this->nome = $nome;
+        }
+        function setNumFilhos($numFilhos) {
+            $this->numFilhos = $numFilhos;
+        }
+        function setTelefone($telefone) {
+            $this->telefone = $telefone;
+        }
+        
+
+        function getNome() {
+            return $this->nome;
+        }
+        function getNumFilhos() {
+            return $this->numFilhos;
+        }
+        function getTelefone() {
+            return $this->telefone;
+        }        
 
         //metodos
         function resumirCadFunc() {
@@ -23,12 +45,20 @@
 
     //chamar objeto
     $y = new Funcionario();
-    //acessar objeto e utilizar sua função (-> serve pra acessar o obj)
-    echo $y->resumirCadFunc() . "<br>";
-    $y->modificarNumFilhos(3);
-    echo $y->resumirCadFunc();
+    //utilizando os recem-criados getters e setters
+    $y->setNome("Josué");
+    $y->setNumFilhos(4);
+    $y->setTelefone("11 99999-9999");
+    //printando
+    // echo $y->resumirCadFunc();
+    echo $y->getNome() . ' tem ' . $y->getNumFilhos() . ' filho(s). Seu telefone é ' . $y->getTelefone();
 
     echo "<hr>";
 
     $x = new Funcionario();
-    echo $x->resumirCadFunc() . "<br>";
+    $x->setNome("Maria");
+    $x->setNumFilhos(1);
+    $x->setTelefone('43 12345-1234');
+
+    echo $x->getNome() . ' tem ' . $x->getNumFilhos() . ' filho(s). Seu telefone é ' . $x->getTelefone();
+
