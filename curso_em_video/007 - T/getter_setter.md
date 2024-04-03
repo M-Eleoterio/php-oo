@@ -72,3 +72,6 @@ class Objeto {
     #...
 }
 ```
+```php
+$o = new Objeto("valor", "outro valor");
+```
